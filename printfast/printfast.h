@@ -36,5 +36,5 @@ t_att	init_struct(void);
 int		printfast(const char *s, ...);
 char 	*get_s(va_list params, t_att option);
 char	*ret_type(va_list params, t_att option);
-
+int	get_as(va_list params);
 #endif

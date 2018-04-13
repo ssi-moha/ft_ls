@@ -17,6 +17,8 @@ int		get_width(char *s, int *i)
 {
 	while (is_type(s[*i]) < 0 && s[*i])
 	{
+		if (s[*i] == '*')
+			return (-2);
 		if (ft_isdigit(s[*i]))
 			return (ft_atoi(s + *i));
 		(*i)++;

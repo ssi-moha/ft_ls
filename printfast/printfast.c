@@ -12,7 +12,7 @@
 
 #include "printfast.h"
 
-int		get_ret(char *s, va_list params)
+int		get_ret(char *s, va_list params, int *idx, char *buff)
 {
 	int i;
 	t_att option;
@@ -25,11 +25,13 @@ int		get_ret(char *s, va_list params)
 		option.minus = 1;
 	}
 	option.width = get_width(s, &i);
+	if (option.width == -2)
+		option.width = get_as(params);
 	while (is_type(s[i]) < 0)
 		i++;
 	option.type = is_type(s[i]);
+	fill_buff(buff, idx, ret_type(params, option));
 	printf("width = %d\ntype = %d\nminus = %d\n", option.width, option.type, option.minus);
-	printf("s = %s\n", ret_type(params, option));
 	return (i + 1);
 }
 
@@ -57,7 +59,7 @@ void	ft_count(char *s, va_list params, int *k)
 		}
 		if (s[i] == '%')
 		{
-			i += get_ret(s + i , params);
+			i += get_ret(s + i , params, &idx_buff, buff);
 		}
 	}
 	write(1, buff, idx_buff);
@@ -77,5 +79,5 @@ int		printfast(const char *s, ...)
 
 int main()
 {
-	printfast("COUCOU %s\n", "sinane");
+	printfast("COUCOU %-*s\n", 7, "sinane");
 }
