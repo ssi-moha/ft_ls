@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/includes/libft.h"
 #include "printfast.h"
 
 int		get_width(char *s, int *i)
 {
-	printf("%s\n", s + *i);
 	while (is_type(s[*i]) < 0 && s[*i])
 	{
 		if (ft_isdigit(s[*i]))

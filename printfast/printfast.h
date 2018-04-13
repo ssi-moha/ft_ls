@@ -34,4 +34,7 @@ int		is_type(char c);
 int		get_width(char *s, int *i);
 t_att	init_struct(void);
 int		printfast(const char *s, ...);
+char 	*get_s(va_list params, t_att option);
+char	*ret_type(va_list params, t_att option);
+
 #endif
