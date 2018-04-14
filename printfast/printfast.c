@@ -31,7 +31,7 @@ int		get_ret(char *s, va_list params, int *idx, char *buff)
 		i++;
 	option.type = is_type(s[i]);
 	fill_buff(buff, idx, ret_type(params, option));
-	printf("width = %d\ntype = %d\nminus = %d\n", option.width, option.type, option.minus);
+	printf("width = %d\ntype = %d\nminus = %d\nbuff = %s\n", option.width, option.type, option.minus, buff);
 	return (i + 1);
 }
 
