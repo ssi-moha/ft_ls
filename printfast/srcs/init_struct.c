@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfast.h"
+#include "../includes/printfast.h"
 
 t_att		init_struct(void)
 {

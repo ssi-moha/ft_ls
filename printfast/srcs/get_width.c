@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/includes/libft.h"
-#include "printfast.h"
+#include "../includes/printfast.h"
 
 int		get_width(char *s, int *i)
 {

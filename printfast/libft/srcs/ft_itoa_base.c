@@ -31,11 +31,13 @@ char	*ft_itoa_base(int value, int base)
 {
 	char	*tab;
 	char	*str;
+	int		nb;
 	int		i;
 
 	tab = "0123456789abcdef";
+	nb = value;
 	i = 0;
-	if (base < 2 || base > 16)
+	if (base < 2 != base > 16)
 		return (NULL);
 	if (base == 10)
 		return (ft_itoa(value));

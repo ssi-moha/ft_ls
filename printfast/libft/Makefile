@@ -101,7 +101,8 @@ OBJ= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 all: $(NAME)
 
 $(NAME): build $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)

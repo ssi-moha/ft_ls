@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfast.h"
+#include "../includes/printfast.h"
 
 int		get_ret(char *s, va_list params, int *idx, char *buff)
 {
@@ -31,7 +31,6 @@ int		get_ret(char *s, va_list params, int *idx, char *buff)
 		i++;
 	option.type = is_type(s[i]);
 	fill_buff(buff, idx, ret_type(params, option));
-	printf("width = %d\ntype = %d\nminus = %d\nbuff = %s\n", option.width, option.type, option.minus, buff);
 	return (i + 1);
 }
 
@@ -40,7 +39,6 @@ void	ft_count(char *s, va_list params, int *k)
 	char	buff[BUFF_SIZE + 1];
 	int		i;
 	int		idx_buff;
-	t_att	ret;
 
 	i = 0;
 	idx_buff = 0;
@@ -75,9 +73,4 @@ int		printfast(const char *s, ...)
 	ft_count(ft_strdup(s), params, &k);
 	va_end(params);
 	return (k);
-}
-
-int main()
-{
-	printfast("COUCOU %-*s\n", 7, "sinane");
 }

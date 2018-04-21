@@ -1,5 +1,5 @@
 
-#include "printfast.h"
+#include "../includes/printfast.h"
 
 void	fill_buff(char *buff, int *idx, char *ret)
 {
@@ -15,6 +15,5 @@ void	fill_buff(char *buff, int *idx, char *ret)
 			ft_bzero(buff, BUFF_SIZE + 1);
 		}
 		buff[(*idx)++] = ret[i++];
-		//(*k)++;
 	}
 }

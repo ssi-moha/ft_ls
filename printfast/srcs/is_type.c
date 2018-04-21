@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfast.h"
+#include "../includes/printfast.h"
 
 int		is_type(char c)
 {
