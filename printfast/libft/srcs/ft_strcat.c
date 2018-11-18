@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssi-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 06:24:06 by ssi-moha          #+#    #+#             */
-/*   Updated: 2017/12/05 21:47:07 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/11/18 00:24:37 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ char	*ft_strcat(char *s1, const char *s2)
 	i = ft_strlen(s1);
 	j = 0;
 	while (s2[j])
-	{
-		s1[i] = s2[j];
-		i++;
-		j++;
-	}
+		s1[i++] = s2[j++];
 	s1[i] = s2[j];
 	return (s1);
 }
