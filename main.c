@@ -6,7 +6,7 @@
 /*   By: ovrsea <ovrsea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 16:07:07 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/19 20:22:07 by ovrsea           ###   ########.fr       */
+/*   Updated: 2018/11/19 20:39:17 by ovrsea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,14 @@ int     main(int ac, char **av)
     dir = opendir(av[i]);
     file_list = NULL;
 
+    if (options & 1 << (int)(ft_strchr(OPTIONS, 'a') - OPTIONS))
+        puts("a ON");
+    else
+        puts("a OFF");
     while ((file = readdir(dir)) != NULL)
+    {
         add_file_to_list(file->d_name, &file_list);
+    }
     //tmp = file_list;
     /*while (tmp)
     {
