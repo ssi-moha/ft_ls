@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ls.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ovrsea <ovrsea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 15:47:37 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/18 19:08:34 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/11/19 18:44:50 by ovrsea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ typedef struct      s_file
 }                   t_file;
 
 t_file              *add_file_to_list(char *filename, t_file **file_list);
-void                sort_list(int options, t_file file_list);
+void                sort_list(int options, t_file **file_list);
 
 #endif

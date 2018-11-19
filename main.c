@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ovrsea <ovrsea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 16:07:07 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/18 19:04:09 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/11/19 20:22:07 by ovrsea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,24 @@ int     main(int ac, char **av)
     struct dirent *file;
     t_file *file_list;
     t_file *tmp;
+    int options;
     int i;
 
     i = 1;
-    handle_options(ac, av, &i);
+    options = handle_options(ac, av, &i);
     dir = opendir(av[i]);
     file_list = NULL;
 
     while ((file = readdir(dir)) != NULL)
         add_file_to_list(file->d_name, &file_list);
+    //tmp = file_list;
+    /*while (tmp)
+    {
+        printf("%s\n", tmp->name);
+        tmp = tmp->next;
+    }*/
+    puts("");
+    sort_list(options, &file_list);
     tmp = file_list;
     while (tmp)
     {

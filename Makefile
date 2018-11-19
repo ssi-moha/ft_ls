@@ -14,7 +14,8 @@ LIB = printfast/printfast.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = $(SRCDIR)/handle_options.c $(SRCDIR)/add_file_to_list.c
+SRC = $(SRCDIR)/handle_options.c $(SRCDIR)/add_file_to_list.c \
+  $(SRCDIR)/sort_list.c
 
 OBJ= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
