@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_option.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 16:07:07 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/20 20:08:49 by ssi-moha         ###   ########.fr       */
+/*   Created: 2018/11/20 20:20:24 by ssi-moha          #+#    #+#             */
+/*   Updated: 2018/11/20 20:21:47 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/ft_ls.h"
 
-#include <stdio.h>
-#include <dirent.h>
-#include <math.h>
-#include "printfast/includes/printfast.h"
-#include "includes/ft_ls.h"
-
-    //if (options & 1 << (int)(ft_strchr(OPTIONS, 'a') - OPTIONS))
-
-
-int     main(int ac, char **av)
+int     check_option(int options, char flag)
 {
-    int options;
-    int i;
-   
-    i = 1;
-    options = handle_options(ac, av, &i);
-    
-    while (i < ac)
-    {
-        ft_ls(av[i++], options);
-    }
+    return (options & 1 << (int)(ft_strchr(OPTIONS, flag) - OPTIONS));
 }
