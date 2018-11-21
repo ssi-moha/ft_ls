@@ -16,9 +16,10 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = $(SRCDIR)/handle_options.c $(SRCDIR)/add_file_to_list.c \
   $(SRCDIR)/sort_list.c $(SRCDIR)/ft_ls.c $(SRCDIR)/check_option.c\
+  $(SRCDIR)/add_filename_to_path.c
    
 
-OBJ= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+OBJ = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 all: $(NAME)
 

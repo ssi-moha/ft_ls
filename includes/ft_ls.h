@@ -6,7 +6,7 @@
 /*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 15:47:37 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/20 20:22:56 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/11/21 20:58:35 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ t_file              *add_file_to_list(char *filename, t_file **file_list);
 void                sort_list(int options, t_file **file_list);
 void                ft_ls(char *arg, int options);
 int                 check_option(int options, char flag);
+char                *add_filename_to_path(char *old_path, char *filename);
 
 #endif
