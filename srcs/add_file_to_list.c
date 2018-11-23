@@ -6,7 +6,7 @@
 /*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 17:00:07 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/18 18:18:21 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/11/23 22:05:26 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_file  *add_file_to_list(char *filename, t_file **file_list)
         file->next = *file_list;
     else
         file->next = *file_list;
-    file->prev = NULL;
     *file_list = file;
     return (*file_list);
 }
