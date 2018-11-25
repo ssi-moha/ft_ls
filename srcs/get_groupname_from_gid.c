@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_file_access.c                                :+:      :+:    :+:   */
+/*   get_groupname_from_gid.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 20:03:24 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/24 18:57:31 by ssi-moha         ###   ########.fr       */
+/*   Created: 2018/11/25 15:00:33 by ssi-moha          #+#    #+#             */
+/*   Updated: 2018/11/25 15:08:35 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
-#include <dirent.h>
-#include <sys/stat.h>
+#include <grp.h>
+#include <uuid/uuid.h>
 
-int    check_file_access(struct stat file_stat, int define)
+void    get_groupname_from_gid(struct stat file_stat, t_file *file_list)
 {
-    return(file_stat.st_mode & define);
+    struct group *group_info;
+    
+    if ((group_info = getgrgid(file_stat.st_gid)) != NULL)
+        file_list->group_name = ft_strdup(group_info->gr_name);
 }

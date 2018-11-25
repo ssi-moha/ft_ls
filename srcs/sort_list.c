@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ovrsea <ovrsea@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 19:05:19 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/19 20:24:00 by ovrsea           ###   ########.fr       */
+/*   Updated: 2018/11/25 14:39:24 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void    print_list(t_file *file_list)
         printfast("%s\n", tmp->name);
         tmp = tmp->next;
     }
-    puts("");
 }
 
 t_file *sorted_merge(t_file *a, t_file *b)
@@ -91,7 +90,6 @@ void    sort_list(int options, t_file **file_list)
     sort_list(0, &front_list);
     sort_list(0, &back_list);
     
-
     //print_list(front_list);
     //print_list(back_list);
 
