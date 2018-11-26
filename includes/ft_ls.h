@@ -6,7 +6,7 @@
 /*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 15:47:37 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/25 16:30:21 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/11/25 19:02:41 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@
 # define OPTIONS_END "--"
 # define SIX_MONTHS_TIMESTAMP 15638400
 # define PERMISSIONS_LINE_LEN 13
+# define LAST_UPDATE_DATE 13
+# define YEAR_LEN 5
 
 int                 set_options(int ac, char **av, int *i);
-
 typedef struct      s_file
 {
     struct s_file   *next;
@@ -32,6 +33,8 @@ typedef struct      s_file
     char            file_permissions[PERMISSIONS_LINE_LEN];
     int             hard_links;
     long long       size;
+    char            last_update[LAST_UPDATE_DATE];
+    char            year[YEAR_LEN];
 }                   t_file;
 
 t_file              *add_file_to_list(char *filename, t_file **file_list);
