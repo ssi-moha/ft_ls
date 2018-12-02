@@ -6,7 +6,7 @@
 /*   By: lucasbaudino <lucasbaudino@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 16:34:21 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/12/02 17:20:34 by lucasbaudin      ###   ########.fr       */
+/*   Updated: 2018/12/02 18:04:01 by lucasbaudin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,16 @@ static void    get_file_permissions(struct stat file_stat, char *permissions_lin
     permissions_line[i++] = get_file_type(file_stat);
     permissions_line[i++] = ((file_stat.st_mode & S_IRUSR) ? 'r' : '-');
     permissions_line[i++] = ((file_stat.st_mode & S_IWUSR) ? 'w' : '-');
-    permissions_line[i++] = ((file_stat.st_mode & S_IXUSR) ? 'x' : '-');
+    permissions_line[i] = ((file_stat.st_mode & S_IXUSR) ? 'x' : '-');
+    if (file_stat.st_mode & S_ISUID)
+        permissions_line[i] = (permissions_line[i] == 'x' ? 's' : 'S');
+    i++;
     permissions_line[i++] = ((file_stat.st_mode & S_IRGRP) ? 'r' : '-');
     permissions_line[i++] = ((file_stat.st_mode & S_IWGRP) ? 'w' : '-');
-    permissions_line[i++] = ((file_stat.st_mode & S_IXGRP) ? 'x' : '-');
+    permissions_line[i] = ((file_stat.st_mode & S_IXGRP) ? 'x' : '-');
+    if (file_stat.st_mode & S_ISGID)
+        permissions_line[i] = (permissions_line[i] == 'x' ? 's' : 'S');
+    i++;    
     permissions_line[i++] = ((file_stat.st_mode & S_IROTH) ? 'r' : '-');
     permissions_line[i++] = ((file_stat.st_mode & S_IWOTH) ? 'w' : '-');
     permissions_line[i] = ((file_stat.st_mode & S_IXOTH) ? 'x' : '-');
