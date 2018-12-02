@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ls.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucasbaudino <lucasbaudino@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 15:47:37 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/25 19:02:41 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/12/02 15:39:35 by lucasbaudin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct      s_file
     char            *group_name;
     char            file_permissions[PERMISSIONS_LINE_LEN];
     int             hard_links;
-    long long       size;
+    off_t           size;
     char            last_update[LAST_UPDATE_DATE];
     char            year[YEAR_LEN];
 }                   t_file;

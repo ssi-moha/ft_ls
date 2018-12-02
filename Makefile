@@ -12,7 +12,7 @@ H = includes/ft_ls.h
 
 LIB = printfast/printfast.a
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 SRC = $(SRCDIR)/set_options.c $(SRCDIR)/add_file_to_list.c \
   $(SRCDIR)/sort_list.c $(SRCDIR)/ft_ls.c $(SRCDIR)/check_option.c\

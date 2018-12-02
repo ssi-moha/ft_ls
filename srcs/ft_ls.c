@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ls.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucasbaudino <lucasbaudino@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 19:57:48 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/24 17:04:10 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:33:41 by lucasbaudin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,23 @@ void    ft_ls(char *path, int options)
     }
     sort_list(options, &file_list);
     tmp = file_list;
-    /*while (tmp)
+    while (tmp)
     {
-        printfast("%s\n", tmp->name);
+        if (check_option(options, 'l'))
+            printfast(
+                "%s  %d  %s  %s  %d  %s  %s\n", 
+                tmp->file_permissions, 
+                tmp->hard_links, 
+                tmp->user_name, 
+                tmp->group_name,
+                tmp->size,
+                tmp->last_update,
+                tmp->name
+            );
+        else
+            printfast("%s\n", tmp->name);
         tmp = tmp->next;
-    }*/
-    puts("");
+    }
     free_list(&file_list);
     closedir(dir);
 }
