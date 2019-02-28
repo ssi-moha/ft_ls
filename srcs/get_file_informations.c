@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file_informations.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucasbaudino <lucasbaudino@student.42.f    +#+  +:+       +#+        */
+/*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 16:34:21 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/12/02 18:04:01 by lucasbaudin      ###   ########.fr       */
+/*   Updated: 2019/02/28 18:30:17 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

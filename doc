@@ -1,0 +1,4 @@
+affichage lien symbolique
+trier les arguments passe en param de ft_ls
+quand ft_ls argument inconnu: print usage
+ft_ls -R sur un fichier ne s'affiche pas

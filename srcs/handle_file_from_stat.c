@@ -6,7 +6,7 @@
 /*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 15:25:27 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/24 18:35:47 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2019/02/28 17:54:53 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ void    handle_file_from_stat(char *old_path, char *file_name, int options, t_fi
     add_file_to_list(file_name, file_list);
     if (check_option(options, 'l'))
         get_file_informations(file_stat, file_list);
+    if (check_option(options, 't'))
+        get_last_update_timestamp(file_stat, file_list);
     ft_strdel(&new_path);
 }

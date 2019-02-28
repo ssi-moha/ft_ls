@@ -25,8 +25,8 @@ int     main(int ac, char **av)
     i = 1;
     options = set_options(ac, av, &i);
     
+    if (i == ac)
+        ft_ls(".", options);
     while (i < ac)
-    {
         ft_ls(av[i++], options);
-    }
 }

@@ -19,13 +19,14 @@ t_file  *add_file_to_list(char *filename, t_file **file_list)
     file = (t_file*)malloc(sizeof(t_file));
     file->name = ft_strdup(filename);
     file->hard_links = 0;
+    file->last_update_timestamp = 0;
     ft_bzero(file->file_permissions, PERMISSIONS_LINE_LEN);
     ft_bzero(file->last_update, LAST_UPDATE_DATE);
     ft_bzero(file->year, YEAR_LEN);
     file->user_name = NULL;
     file->group_name = NULL;
     file->size = 0;
-
+    
     if (file_list)
         file->next = *file_list;
     else

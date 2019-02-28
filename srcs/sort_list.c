@@ -6,7 +6,7 @@
 /*   By: ssi-moha <ssi-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 19:05:19 by ssi-moha          #+#    #+#             */
-/*   Updated: 2018/11/25 14:39:24 by ssi-moha         ###   ########.fr       */
+/*   Updated: 2019/02/28 19:27:26 by ssi-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,24 @@ void    print_list(t_file *file_list)
     }
 }
 
-t_file *sorted_merge(t_file *a, t_file *b)
+int     sorting_condition(t_file *a, t_file *b, int options)
+{
+    int ret;
+
+    ret = 0;
+    if (check_option(options, 't'))
+    {
+        if (a->last_update_timestamp > b->last_update_timestamp)
+            ret = -1;
+        else if (a->last_update_timestamp < b->last_update_timestamp)
+            ret = 1;
+    }
+    else
+        ret = ft_strcmp(a->name, b->name);
+    return (check_option(options, 'r') ? ret : -ret);
+}
+
+t_file *sorted_merge(t_file *a, t_file *b, int options)
 {
     t_file *result = NULL;
 
@@ -60,16 +77,15 @@ t_file *sorted_merge(t_file *a, t_file *b)
         return(b); 
     else if (b == NULL) 
         return(a);
-    
-    if (ft_strcmp(a->name, b->name) < 0) 
+    if (sorting_condition(a, b, options) > 0) 
     { 
         result = a; 
-        result->next = sorted_merge(a->next, b); 
+        result->next = sorted_merge(a->next, b, options); 
     } 
     else
     { 
         result = b; 
-        result->next = sorted_merge(a, b->next); 
+        result->next = sorted_merge(a, b->next, options); 
     }
     return (result);
 }
@@ -87,11 +103,11 @@ void    sort_list(int options, t_file **file_list)
     
     split_list(*file_list, &front_list, &back_list);
     
-    sort_list(0, &front_list);
-    sort_list(0, &back_list);
+    sort_list(options, &front_list);
+    sort_list(options, &back_list);
     
     //print_list(front_list);
     //print_list(back_list);
 
-    *file_list = sorted_merge(front_list, back_list);
+    *file_list = sorted_merge(front_list, back_list, options);
 }
